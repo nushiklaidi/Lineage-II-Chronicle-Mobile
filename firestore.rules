@@ -1,0 +1,22 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // User profile documents
+    match /users/{userId} {
+      allow read, write: if true;
+
+      // Characters subcollection
+      match /characters/{characterId} {
+        allow read, write: if true;
+      }
+    }
+
+    // Accounts registry for Firestore custom email/password storage
+    match /accounts/{emailDoc} {
+      allow read, write: if true;
+    }
+  }
+}
+
+

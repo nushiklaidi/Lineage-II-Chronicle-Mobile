@@ -1,0 +1,80 @@
+{
+  "entities": {
+    "User": {
+      "title": "User",
+      "description": "User profile document stored under /users/{userId}",
+      "type": "object",
+      "properties": {
+        "uid": { "type": "string" },
+        "email": { "type": "string" },
+        "createdAt": { "type": "string" },
+        "updatedAt": { "type": "string" }
+      },
+      "required": ["uid", "email"]
+    },
+    "Account": {
+      "title": "Account",
+      "description": "Account credential lookup stored under /accounts/{emailDoc}",
+      "type": "object",
+      "properties": {
+        "uid": { "type": "string" },
+        "email": { "type": "string" },
+        "passwordHash": { "type": "string" },
+        "createdAt": { "type": "string" },
+        "updatedAt": { "type": "string" }
+      },
+      "required": ["uid", "email", "passwordHash"]
+    },
+    "CharacterData": {
+      "title": "CharacterData",
+      "description": "Lineage II Character state saved under /users/{userId}/characters/{characterId}",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "userId": { "type": "string" },
+        "name": { "type": "string", "minLength": 2, "maxLength": 30 },
+        "race": { "type": "string" },
+        "classId": { "type": "string" },
+        "className": { "type": "string" },
+        "level": { "type": "number" },
+        "exp": { "type": "number" },
+        "maxExp": { "type": "number" },
+        "sp": { "type": "number" },
+        "hp": { "type": "number" },
+        "maxHp": { "type": "number" },
+        "mp": { "type": "number" },
+        "maxMp": { "type": "number" },
+        "cp": { "type": "number" },
+        "maxCp": { "type": "number" },
+        "gender": { "type": "string" },
+        "faceIndex": { "type": "number" },
+        "hairIndex": { "type": "number" },
+        "hairColor": { "type": "string" },
+        "adena": { "type": "number" },
+        "soulshotsActive": { "type": "boolean" },
+        "soulshotGrade": { "type": "string" },
+        "soulshotCount": { "type": "number" },
+        "hpPotions": { "type": "number" },
+        "mpPotions": { "type": "number" },
+        "equipped": { "type": "object" },
+        "inventory": { "type": "array" },
+        "currentTownId": { "type": "string" },
+        "quests": { "type": "array" },
+        "learnedSkills": { "type": "array" },
+        "createdAt": { "type": "string" },
+        "updatedAt": { "type": "string" }
+      },
+      "required": ["id", "userId", "name", "race", "className", "level"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": { "$ref": "#/entities/User" },
+      "description": "User profile documents"
+    },
+    "/users/{userId}/characters/{characterId}": {
+      "schema": { "$ref": "#/entities/CharacterData" },
+      "description": "Characters owned by a specific user"
+    }
+  }
+}

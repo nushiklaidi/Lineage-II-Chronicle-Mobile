@@ -1,0 +1,6 @@
+{
+  "name": "Lineage II: Chronicle Mobile",
+  "description": "Turn-based mobile Lineage II RPG with character customization, paperdoll equipment, town travel (Aden, Giran, Oren), hunting spots (Cruma Tower, Dragon Valley), soulshots, skills, and enchanting.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
