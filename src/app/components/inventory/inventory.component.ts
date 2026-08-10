@@ -135,11 +135,20 @@ import { Item } from '../../models/game.models';
                 </button>
               }
 
-              <button 
-                (click)="selectedItem.set(null)"
-                class="py-2 bg-[#1a1a24] border border-[#3c3c4a] text-slate-300 font-bold text-xs rounded-lg hover:text-white cursor-pointer">
-                Close
-              </button>
+              @if (item.type === 'scroll' || item.type === 'weapon' || item.type === 'armor') {
+                <button 
+                  (click)="goToEnchantWorkshop()"
+                  class="py-2 bg-[#1a1a24] border border-[#d4af37] text-[#d4af37] font-bold text-xs rounded-lg hover:bg-[#8b7355] hover:text-black transition-colors cursor-pointer flex items-center justify-center gap-1">
+                  <span>⚒️</span>
+                  <span>Workshop</span>
+                </button>
+              } @else {
+                <button 
+                  (click)="selectedItem.set(null)"
+                  class="py-2 bg-[#1a1a24] border border-[#3c3c4a] text-slate-300 font-bold text-xs rounded-lg hover:text-white cursor-pointer">
+                  Close
+                </button>
+              }
             </div>
 
           </div>
@@ -198,5 +207,10 @@ export class InventoryComponent {
   equipSelectedItem(item: Item) {
     this.state.equipItem(item);
     this.selectedItem.set(null);
+  }
+
+  goToEnchantWorkshop() {
+    this.selectedItem.set(null);
+    this.state.activeTab.set('shop');
   }
 }

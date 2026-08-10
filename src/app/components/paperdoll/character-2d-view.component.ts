@@ -344,10 +344,8 @@ export class Character2dViewComponent {
       return { chest: '#334155', pants: '#1e293b', gloves: '#0f172a', boots: '#0f172a', shoulders: '#475569' };
     }
     const grade = chest.grade;
-    if (grade === 'S') {
+    if (grade === 'A') {
       return { chest: '#b45309', pants: '#78350f', gloves: '#d4af37', boots: '#d4af37', shoulders: '#d4af37' };
-    } else if (grade === 'A') {
-      return { chest: '#581c87', pants: '#3b0764', gloves: '#c084fc', boots: '#c084fc', shoulders: '#a855f7' };
     } else if (grade === 'B') {
       return { chest: '#1e3a8a', pants: '#172554', gloves: '#60a5fa', boots: '#60a5fa', shoulders: '#3b82f6' };
     }

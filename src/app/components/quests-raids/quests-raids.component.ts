@@ -104,9 +104,9 @@ import { TOWNS } from '../../data/game-data';
 
           <div class="bg-[#0a0a0c] p-3 rounded-lg border border-[#3c3c4a] space-y-2 text-xs font-mono">
             <div class="flex justify-between"><span class="text-slate-400">Raid Boss:</span><span class="text-red-400 font-bold">Earth Dragon Antharas</span></div>
-            <div class="flex justify-between"><span class="text-slate-400">Boss Level:</span><span class="text-[#d4af37] font-bold">Level 80</span></div>
+            <div class="flex justify-between"><span class="text-slate-400">Boss Level:</span><span class="text-[#d4af37] font-bold">Level 67 (Max)</span></div>
             <div class="flex justify-between"><span class="text-slate-400">Boss Health:</span><span class="text-red-500 font-bold">35,000 HP</span></div>
-            <div class="flex justify-between"><span class="text-slate-400">S-Grade Drops:</span><span class="text-purple-300 font-bold">Dragon Slayer, Angel Slayer, Imperial Armor</span></div>
+            <div class="flex justify-between"><span class="text-slate-400">A-Grade Drops:</span><span class="text-purple-300 font-bold">Dragon Slayer, Angel Slayer, Imperial Armor</span></div>
           </div>
 
           <button 

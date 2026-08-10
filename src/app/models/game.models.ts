@@ -33,7 +33,7 @@ export type EquipmentSlot =
   | 'earring' 
   | 'ring';
 
-export type ItemGrade = 'NG' | 'D' | 'C' | 'B' | 'A' | 'S';
+export type ItemGrade = 'NG' | 'D' | 'C' | 'B' | 'A';
 
 export interface Item {
   id: string;

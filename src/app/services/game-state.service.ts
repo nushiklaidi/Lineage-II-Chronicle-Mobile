@@ -195,6 +195,10 @@ export class GameStateService {
   }
 
   loadCharacterFromSaved(savedChar: SavedCharacterFull) {
+    if (savedChar.character && savedChar.character.level > 67) {
+      savedChar.character.level = 67;
+      savedChar.character.exp = savedChar.character.maxExp;
+    }
     this.activeCharId.set(savedChar.id);
     this.character.set(savedChar.character);
     this.equipped.set(savedChar.equipped || {
@@ -245,6 +249,10 @@ export class GameStateService {
     try {
       const data: SavedCharacterFull = JSON.parse(raw);
       if (data && data.character) {
+        if (data.character.level > 67) {
+          data.character.level = 67;
+          data.character.exp = data.character.maxExp;
+        }
         this.activeCharId.set(data.id || 'char_default');
         this.character.set(data.character);
         if (data.equipped) this.equipped.set(data.equipped);
@@ -527,16 +535,33 @@ export class GameStateService {
     this.character.update(c => {
       if (!c) return null;
 
+      const MAX_LEVEL = 67;
+
+      if (c.level >= MAX_LEVEL) {
+        return {
+          ...c,
+          level: MAX_LEVEL,
+          exp: c.maxExp,
+          sp: c.sp + spGain,
+          adena: c.adena + adenaGain
+        };
+      }
+
       let newExp = c.exp + expGain;
       let newLevel = c.level;
       let maxExp = c.maxExp;
       let leveledUp = false;
 
-      while (newExp >= maxExp) {
+      while (newExp >= maxExp && newLevel < MAX_LEVEL) {
         newExp -= maxExp;
         newLevel += 1;
         maxExp = Math.round(maxExp * 1.35);
         leveledUp = true;
+      }
+
+      if (newLevel >= MAX_LEVEL) {
+        newLevel = MAX_LEVEL;
+        newExp = maxExp;
       }
 
       if (leveledUp) {
@@ -544,7 +569,9 @@ export class GameStateService {
         this.addCombatLog({
           id: Date.now().toString(),
           actor: 'player',
-          text: `🎉 LEVEL UP! You reached Level ${newLevel}! Max HP, MP & CP restored!`,
+          text: newLevel === MAX_LEVEL
+            ? `🎉 MAXIMUM LEVEL REACHED! You reached Level ${MAX_LEVEL}! Max HP, MP & CP restored!`
+            : `🎉 LEVEL UP! You reached Level ${newLevel}! Max HP, MP & CP restored!`,
           isCritical: true
         });
       }

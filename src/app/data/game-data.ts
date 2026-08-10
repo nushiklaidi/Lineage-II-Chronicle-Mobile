@@ -69,7 +69,7 @@ export const CHARACTER_CLASSES: CharacterClass[] = [
   { id: 'abyss_walker', name: 'Abyss Walker', race: 'dark_elf', category: 'fighter', tier: 2, requiredLevel: 40, description: 'Shadow assassin delivering maximum lethal critical strikes.', icon: 'flare' },
   { id: 'spellhowler', name: 'Spellhowler', race: 'dark_elf', category: 'mage', tier: 2, requiredLevel: 40, description: 'Dark magician casting Hurricanes and Death Spikes for max damage.', icon: 'cyclone' },
   { id: 'destroyer', name: 'Destroyer', race: 'orc', category: 'fighter', tier: 2, requiredLevel: 40, description: 'Unstoppable titan activating Guts and Frenzy at low health.', icon: 'skull' },
-  { id: 'bounty_hunter', name: 'Bounty Hunter', race: 'dwarf', category: 'fighter', tier: 2, requiredLevel: 40, description: 'Wealth master capable of spoiling rare S-grade weapons and armor.', icon: 'diamond' }
+  { id: 'bounty_hunter', name: 'Bounty Hunter', race: 'dwarf', category: 'fighter', tier: 2, requiredLevel: 40, description: 'Wealth master capable of spoiling rare A-grade weapons and armor.', icon: 'diamond' }
 ];
 
 export const ALL_ITEMS: Item[] = [
@@ -96,10 +96,8 @@ export const ALL_ITEMS: Item[] = [
   // A-Grade
   { id: 'tallum_blade', name: 'Tallum Blade', icon: 'flash_on', type: 'weapon', slot: 'weapon', grade: 'A', pAtk: 285, mAtk: 155, price: 1200000, description: 'Noble A-Grade sword forged in ancient fires.' },
   { id: 'soul_bow', name: 'Soul Bow', icon: 'electric_bolt', type: 'weapon', slot: 'weapon', grade: 'A', pAtk: 360, mAtk: 150, price: 1350000, critRate: 18, description: 'Absorbs souls to deliver devastating ranged strikes.' },
-
-  // S-Grade
-  { id: 'dragon_slayer', name: 'Dragon Slayer', icon: 'nature_people', type: 'weapon', slot: 'weapon', grade: 'S', pAtk: 410, mAtk: 210, price: 5000000, description: 'Colossal S-Grade two-handed sword forged to slay Antharas.' },
-  { id: 'angel_slayer', name: 'Angel Slayer', icon: 'military_tech', type: 'weapon', slot: 'weapon', grade: 'S', pAtk: 340, mAtk: 190, price: 4800000, critRate: 25, atkSpd: 20, description: 'Ultimate S-Grade dagger delivering lethal backstabs.' },
+  { id: 'dragon_slayer', name: 'Dragon Slayer', icon: 'nature_people', type: 'weapon', slot: 'weapon', grade: 'A', pAtk: 410, mAtk: 210, price: 2500000, description: 'Colossal A-Grade two-handed sword forged to slay Antharas.' },
+  { id: 'angel_slayer', name: 'Angel Slayer', icon: 'military_tech', type: 'weapon', slot: 'weapon', grade: 'A', pAtk: 340, mAtk: 190, price: 2400000, critRate: 25, atkSpd: 20, description: 'Ultimate A-Grade dagger delivering lethal backstabs.' },
 
   // --- ARMOR SETS ---
   // No-Grade Armor
@@ -121,13 +119,11 @@ export const ALL_ITEMS: Item[] = [
   { id: 'zubei_breastplate', name: 'Zubei Breastplate', icon: 'brightness_7', type: 'armor', slot: 'chest', grade: 'B', pDef: 165, price: 180000, setBonusName: 'Zubei Set', setBonusDescription: 'Set Bonus: +12% P.Def & +300 Max HP', description: 'Heavy B-grade armor with polished zubei steel.' },
   { id: 'zubei_gaiters', name: 'Zubei Gaiters', icon: 'calendar_view_week', type: 'armor', slot: 'pants', grade: 'B', pDef: 115, price: 130000, setBonusName: 'Zubei Set', description: 'Zubei leg protection.' },
 
-  // A-Grade Armor (Dark Crystal / Tallum)
+  // A-Grade Armor (Dark Crystal / Tallum / Imperial Crusader / Major Arcana)
   { id: 'dark_crystal_robe', name: 'Dark Crystal Robe', icon: 'all_inclusive', type: 'armor', slot: 'chest', grade: 'A', pDef: 145, mDef: 120, price: 650000, setBonusName: 'Dark Crystal Set', setBonusDescription: 'Set Bonus: +15% Casting Speed, +8% Movement Speed & +5% P.Def', description: 'The premier A-Grade robe set for spellcasters.' },
   { id: 'tallum_heavy_armor', name: 'Tallum Plate Armor', icon: 'shield_with_house', type: 'armor', slot: 'chest', grade: 'A', pDef: 240, price: 750000, setBonusName: 'Tallum Heavy Set', setBonusDescription: 'Set Bonus: +8% Attack Speed & +15% Poison/Bleed Resist', description: 'Indestructible A-Grade heavy plate.' },
-
-  // S-Grade Armor (Imperial Crusader / Major Arcana)
-  { id: 'imperial_crusader_armor', name: 'Imperial Crusader Breastplate', icon: 'shield_moon', type: 'armor', slot: 'chest', grade: 'S', pDef: 350, price: 2800000, setBonusName: 'Imperial Crusader Set', setBonusDescription: 'Set Bonus: +8% P.Atk, +15% P.Def, +500 Max HP & Stun Immunity', description: 'Peak S-Grade armor worn by Aden champions.' },
-  { id: 'major_arcana_robe', name: 'Major Arcana Robe', icon: 'diamond', type: 'armor', slot: 'chest', grade: 'S', pDef: 220, mDef: 210, price: 2600000, setBonusName: 'Major Arcana Set', setBonusDescription: 'Set Bonus: +17% M.Atk, +15% Casting Speed & +300 Max MP', description: 'Supreme S-Grade robe housing primordial arcana energy.' },
+  { id: 'imperial_crusader_armor', name: 'Imperial Crusader Breastplate', icon: 'shield_moon', type: 'armor', slot: 'chest', grade: 'A', pDef: 350, price: 1800000, setBonusName: 'Imperial Crusader Set', setBonusDescription: 'Set Bonus: +8% P.Atk, +15% P.Def, +500 Max HP & Stun Immunity', description: 'Peak A-Grade armor worn by Aden champions.' },
+  { id: 'major_arcana_robe', name: 'Major Arcana Robe', icon: 'diamond', type: 'armor', slot: 'chest', grade: 'A', pDef: 220, mDef: 210, price: 1600000, setBonusName: 'Major Arcana Set', setBonusDescription: 'Set Bonus: +17% M.Atk, +15% Casting Speed & +300 Max MP', description: 'Supreme A-Grade robe housing primordial arcana energy.' },
 
   // Boots & Gloves
   { id: 'boots_of_speed', name: 'Boots of Speed', icon: 'do_not_step', type: 'armor', slot: 'boots', grade: 'C', pDef: 28, price: 15000, description: 'Increases movement & turn readiness.' },
@@ -144,14 +140,12 @@ export const ALL_ITEMS: Item[] = [
   { id: 'soulshot_c', name: 'Soulshot (C-Grade)', icon: 'bolt', type: 'consumable', grade: 'C', price: 30, stackable: true, quantity: 100, description: 'Doubles physical attack power for C-Grade weapons.' },
   { id: 'soulshot_b', name: 'Soulshot (B-Grade)', icon: 'bolt', type: 'consumable', grade: 'B', price: 60, stackable: true, quantity: 100, description: 'Doubles physical attack power for B-Grade weapons.' },
   { id: 'soulshot_a', name: 'Soulshot (A-Grade)', icon: 'bolt', type: 'consumable', grade: 'A', price: 120, stackable: true, quantity: 100, description: 'Doubles physical attack power for A-Grade weapons.' },
-  { id: 'soulshot_s', name: 'Soulshot (S-Grade)', icon: 'bolt', type: 'consumable', grade: 'S', price: 250, stackable: true, quantity: 100, description: 'Doubles physical attack power for S-Grade weapons.' },
 
   // --- ENCHANT SCROLLS ---
   { id: 'scroll_enchant_weapon_d', name: 'Scroll: Enchant Weapon (D)', icon: 'auto_fix_high', type: 'scroll', grade: 'D', price: 12000, description: 'Increases D-Grade Weapon P.Atk/M.Atk (+1 to +16). Safe up to +3.' },
   { id: 'scroll_enchant_weapon_c', name: 'Scroll: Enchant Weapon (C)', icon: 'auto_fix_high', type: 'scroll', grade: 'C', price: 45000, description: 'Increases C-Grade Weapon stats. Weapon glows at +4, +7, +10!' },
   { id: 'scroll_enchant_weapon_b', name: 'Scroll: Enchant Weapon (B)', icon: 'auto_fix_high', type: 'scroll', grade: 'B', price: 120000, description: 'Increases B-Grade Weapon stats.' },
-  { id: 'scroll_enchant_weapon_a', name: 'Scroll: Enchant Weapon (A)', icon: 'auto_fix_high', type: 'scroll', grade: 'A', price: 350000, description: 'Increases A-Grade Weapon stats.' },
-  { id: 'scroll_enchant_weapon_s', name: 'Scroll: Enchant Weapon (S)', icon: 'auto_fix_high', type: 'scroll', grade: 'S', price: 1000000, description: 'Increases S-Grade Weapon stats to mythical aura levels!' },
+  { id: 'scroll_enchant_weapon_a', name: 'Scroll: Enchant Weapon (A)', icon: 'auto_fix_high', type: 'scroll', grade: 'A', price: 350000, description: 'Increases A-Grade Weapon stats to mythical aura levels!' },
   { id: 'scroll_enchant_armor', name: 'Scroll: Enchant Armor', icon: 'verified_user', type: 'scroll', grade: 'D', price: 8000, description: 'Increases Armor P.Def/M.Def (+1 to +16).' }
 ];
 
@@ -532,18 +526,18 @@ export const TOWNS: Town[] = [
       },
       {
         id: 'antharas_lair',
-        name: "Antharas' Lair (S-Grade Raid)",
+        name: "Antharas' Lair (A-Grade Raid)",
         townId: 'aden',
-        recommendedLevel: 'Lvl 70 - 85',
-        minLevel: 70,
+        recommendedLevel: 'Lvl 58 - 67',
+        minLevel: 55,
         isSpecialZone: true,
-        description: 'The burning subterranean lair of the Earth Dragon Antharas. Dropping legendary S-Grade weapons!',
+        description: 'The burning subterranean lair of the Earth Dragon Antharas. Dropping legendary A-Grade weapons!',
         backgroundImage: 'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=1000&auto=format&fit=crop',
         mobs: [
           {
             id: 'dragon_knight',
             name: 'Antharas Dragon Knight',
-            level: 75,
+            level: 64,
             avatarUrl: '🐲',
             hp: 8500,
             maxHp: 8500,
@@ -558,13 +552,13 @@ export const TOWNS: Town[] = [
             possibleDrops: [
               { item: ALL_ITEMS.find(i => i.id === 'dragon_slayer')!, chance: 0.02 },
               { item: ALL_ITEMS.find(i => i.id === 'imperial_crusader_armor')!, chance: 0.02 },
-              { item: ALL_ITEMS.find(i => i.id === 'scroll_enchant_weapon_s')!, chance: 0.1 }
+              { item: ALL_ITEMS.find(i => i.id === 'scroll_enchant_weapon_a')!, chance: 0.1 }
             ]
           },
           {
             id: 'antharas_boss',
             name: 'Earth Dragon Antharas (Grand Raid)',
-            level: 80,
+            level: 67,
             isBoss: true,
             avatarUrl: '🐉',
             hp: 35000,
@@ -581,7 +575,7 @@ export const TOWNS: Town[] = [
               { item: ALL_ITEMS.find(i => i.id === 'dragon_slayer')!, chance: 0.25 },
               { item: ALL_ITEMS.find(i => i.id === 'angel_slayer')!, chance: 0.25 },
               { item: ALL_ITEMS.find(i => i.id === 'major_arcana_robe')!, chance: 0.25 },
-              { item: ALL_ITEMS.find(i => i.id === 'scroll_enchant_weapon_s')!, chance: 0.8 }
+              { item: ALL_ITEMS.find(i => i.id === 'scroll_enchant_weapon_a')!, chance: 0.8 }
             ]
           }
         ]
